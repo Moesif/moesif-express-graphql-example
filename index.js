@@ -1,7 +1,7 @@
 const express = require('express');
 const graphqlHTTP = require('express-graphql');
 const { buildSchema } = require('graphql');
-const moesifExpress = require('moesif-express');
+const moesif = require('moesif-nodejs');
 const bodyParser = require('body-parser-graphql');
 
 // This is a (sample) collection of books we'll be able to query
@@ -47,7 +47,7 @@ const moesifOptions = {
     applicationId: 'Your Moesif Application Id'
 };
 
-const moesifMiddleware = moesifExpress(moesifOptions);
+const moesifMiddleware = moesif(moesifOptions);
 
 // this adds moesif middleware to express app.
 app.use(moesifMiddleware);
